@@ -1,7 +1,7 @@
 version: '2'
 services:
   Server:
-    build: ./Server
+    build: ./cuda-test
     expose:
       - "8080"
     privileged: true

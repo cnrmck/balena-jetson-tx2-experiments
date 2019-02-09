@@ -4,7 +4,7 @@ main() {
     isInitsystemOn
     startServices
     testCudaInstallation
-    testJavaInstallation
+    # testJavaInstallation
 
     echo "Use control-c to quit this script"
     while true; do
@@ -13,7 +13,7 @@ main() {
 }
 
 isInitsystemOn() {
-    if [ -z ${INITSYSTEM+x} ]; then 
+    if [ -z ${INITSYSTEM+x} ]; then
         echo "Error: INITSYSTEM is unset"
     elif [ "$INITSYSTEM" = "on" ]; then
         echo "SUCCESS: INITSYSTEM is on"
@@ -23,21 +23,21 @@ isInitsystemOn() {
 }
 
 startServices() {
-    echo "Attempting to start tomcat8 and nvidia-persistenced:"
-    systemctl start tomcat8
-    if [[ $? -ne 0 ]]; then
-        echo "ERROR: unable to start tomcat8"
-    fi
+    echo "Attempting to start nvidia-persistenced:"
+    # systemctl start tomcat8
+    # if [[ $? -ne 0 ]]; then
+    #     echo "ERROR: unable to start tomcat8"
+    # fi
     systemctl start nvidia-persistenced
     if [[ $? -ne 0 ]]; then
         echo "ERROR: unable to start nvidia-persistenced"
     fi
 
-    echo "Getting status of services tomcat8 and nvidia-persistenced:"
-    systemctl status tomcat8
+    # echo "Getting status of services tomcat8 and nvidia-persistenced:"
+    # systemctl status tomcat8
     systemctl status nvidia-persistenced
 
-    ps aewwx | grep tomcat8 | grep -v grep
+    # ps aewwx | grep tomcat8 | grep -v grep
     # note that PID and time will change
     # 302 ?        Sl     0:58 /usr/lib/jvm/java-8-openjdk-
     # arm64/bin/java -Djava.util.logging.config.file=/var/lib/tomcat8/
@@ -93,7 +93,7 @@ testCudaInstallation() {
      # Copyright (c) 2005-2017 NVIDIA Corporation
      # Built on Sun_Nov_19_03:16:56_CST_2017
      # Cuda compilation tools, release 9.0, V9.0.252
- 
+
     nvcc hello-world.cu -L /usr/local/cuda/lib -lcudart -o hello-world
 
     /usr/src/app/hello-world
