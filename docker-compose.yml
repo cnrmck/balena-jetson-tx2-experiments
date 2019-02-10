@@ -1,6 +1,6 @@
 version: '2'
 services:
-  Server:
+  cuda-test:
     build: ./cuda-test
     expose:
       - "8080"

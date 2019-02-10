@@ -4,7 +4,6 @@ main() {
     isInitsystemOn
     startServices
     testCudaInstallation
-    # testJavaInstallation
 
     echo "Use control-c to quit this script"
     while true; do
