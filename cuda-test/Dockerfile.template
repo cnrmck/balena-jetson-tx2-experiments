@@ -83,11 +83,6 @@ RUN ln -sf /usr/lib/aarch64-linux-gnu/tegra/libGL.so /usr/lib/aarch64-linux-gnu/
 # D.R. – need to do this for some strange reason (for jetson tx2)
 RUN ln -s /usr/lib/aarch64-linux-gnu/libcuda.so /usr/lib/aarch64-linux-gnu/libcuda.so.1
 
-# CM: have to symlink to older gcc for nvcc build, otherwise I get :
-# error -- unsupported GNU version! gcc versions later than 6 are not supported!
-# RUN ln -s /usr/bin/gcc-4.4 /usr/local/cuda/bin/gcc
-# RUN ln -s /usr/bin/g++-4.4 /usr/local/cuda/bin/g++
-
 WORKDIR /app
 COPY . ./
 RUN echo $PATH
