@@ -35,7 +35,6 @@ RUN systemctl mask \
 
 STOPSIGNAL 37
 VOLUME ["/sys/fs/cgroup"]
-ENTRYPOINT ["/usr/bin/entry.sh"]
 
 ####################################################################
 # END SNIPPET FROM: https://github.com/balena-io-library/base-images/blob/master/balena-base-images/openjdk/jetson-tx2/debian/stretch/8-jdk/build/Dockerfile
