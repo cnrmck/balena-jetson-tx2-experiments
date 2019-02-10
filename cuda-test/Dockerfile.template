@@ -1,6 +1,6 @@
 # https://github.com/eiodiagnostics/balena-jetson-tx2-experiments
 # FROM resin/jetson-tx2-debian:stretch
-FROM balenalib/%%BALENA_MACHINE_NAME%%-ubuntu-python3.7-trusty-build
+FROM balenalib/%%BALENA_MACHINE_NAME%%-ubuntu-python:3.7-xenial-build
 LABEL Description="This image is used create a privileged container for Nvidia Jetson TX2 using BalenaOS"
 LABEL Version="1.0"
 
