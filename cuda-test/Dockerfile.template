@@ -90,9 +90,9 @@ RUN ln -s /usr/bin/g++-4.4 /usr/local/cuda/bin/g++
 
 CMD ["/bin/bash"]
 
-WORKDIR /app
-COPY . ./
-RUN echo $PATH
-ENV PATH="${PATH}:/usr/local/cuda/bin"
-RUN nvcc hello-world.cu -L /usr/local/cuda/lib -lcudart -o hello-world
-CMD ["/app/testInstallation.bash"]
+# WORKDIR /app
+# COPY . ./
+# RUN echo $PATH
+# ENV PATH="${PATH}:/usr/local/cuda/bin"
+# RUN nvcc hello-world.cu -L /usr/local/cuda/lib -lcudart -o hello-world
+# CMD ["/app/testInstallation.bash"]
