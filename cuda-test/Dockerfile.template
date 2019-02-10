@@ -1,4 +1,4 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian
+FROM balenalib/%%BALENA_MACHINE_NAME%%-ubuntu
 
 # Install Systemd
 ENV container docker
@@ -49,7 +49,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # ca-certificates ensures that we can download from the nvidia site
 # libssl and openssl come along for the ride
 
-# CM: had to switch out libssl1.0.0 \ for libssl-dev 
+# CM: had to switch out libssl1.0.0 \ for libssl-dev
 RUN apt-get install -y --reinstall --no-install-recommends \
   ca-certificates \
   libssl-dev \
