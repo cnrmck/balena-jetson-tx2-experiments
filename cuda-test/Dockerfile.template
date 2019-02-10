@@ -88,6 +88,8 @@ RUN ln -s /usr/lib/aarch64-linux-gnu/libcuda.so /usr/lib/aarch64-linux-gnu/libcu
 RUN ln -s /usr/bin/gcc-4.4 /usr/local/cuda/bin/gcc
 RUN ln -s /usr/bin/g++-4.4 /usr/local/cuda/bin/g++
 
+CMD ["/bin/bash"]
+
 WORKDIR /app
 COPY . ./
 RUN echo $PATH
